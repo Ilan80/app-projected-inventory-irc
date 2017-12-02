@@ -1,0 +1,15 @@
+---
+declared-services:
+  my-conversation-service:
+    label: conversation
+    plan: free
+applications:
+- name: app-projected-inventory-irc
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - conversation-projected-inventory
+  env:
+    NPM_CONFIG_PRODUCTION: false
